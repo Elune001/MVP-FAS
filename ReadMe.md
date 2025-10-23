@@ -1,5 +1,7 @@
-Multi-View Slot Attention using Paraphrased Texts for Face Anti-Spoofing
+[ICCV 2025] Multi-View Slot Attention using Paraphrased Texts for Face Anti-Spoofing
 =======================
+CODE: Coming Soon
+
 ![MVP-FAS](./source/MVP_FAS.png)
 
 MVS visualization
