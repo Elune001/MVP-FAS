@@ -236,3 +236,21 @@ Run ```./test.py```
 ```
 python test.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting SFW --train_dataset FW --test_dataset S --checkpoint best_model.pth 
 ```
+---
+
+## 📝 Citation
+
+```bibtex
+@InProceedings{Yu_2025_ICCV,
+    author    = {Yu, Jeongmin and Kim, Susang and Lee, Kisu and Kwon, Taekyoung and Shin, Won-Yong and Kim, Ha Young},
+    title     = {Multi-View Slot Attention Using Paraphrased Texts for Face Anti-Spoofing},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {21117-21128}
+}
+```
+
+### 🔗 Related Links
+- [ICCV 2025 Main Conference Open Access](https://openaccess.thecvf.com/content/ICCV2025/html/Yu_Multi-View_Slot_Attention_Using_Paraphrased_Texts_for_Face_Anti-Spoofing_ICCV_2025_paper.html)
+- [ICCV 2025 Workshop on Foundation and Generative Models in Biometrics](https://foundgen-bio.github.io/iccv2025/)
