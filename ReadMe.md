@@ -1,24 +1,30 @@
-[ICCV 2025] Multi-View Slot Attention using Paraphrased Texts for Face Anti-Spoofing
-=======================
-CODE: Coming Soon
+# [ICCV 2025] Multi-View Slot Attention using Paraphrased Texts for Face Anti-Spoofing
+
+
+## 🏆 ICCV 2025 Main Track — Poster  
+## 🎤 ICCV 2025 Workshop on Foundation and Generative Models in Biometrics — Oral
+
+---
+
+## 🧠 MVP-FAS Overview
 
 ![MVP-FAS](./source/MVP_FAS.png)
 
-MVS visualization
-=======================
+---
+
+## 🔍 MVS Visualization
 ![MVS_visualization](./source/slot_visualization.png) 
 -----------------------
-Data preparation
-=======================
 
-- Data preprocessing
 
-    - We follow FLIP's data preprocessing on Protocol 1 and 2 [(link)](https://github.com/koushiksrivats/FLIP/blob/main/docs/datasets.md)
-
-- location of datasets 
-
-    - Download each dataset from the links below and place them under the ```./dataset``` directory after preprocessing.
+## 📦 Data Preparation
+### 1️⃣ Data Preprocessing
+- We follow **FLIP's** data preprocessing for both Protocol 1 and Protocol 2 [(link)](https://github.com/koushiksrivats/FLIP/blob/main/docs/datasets.md)
+### 2️⃣ Dataset Locations
+- Download each dataset from the links below and place them under the ```./dataset``` directory after preprocessing.
 Each annotations are located under the provided dataset directory with our code.
+
+
 
 - Protocol 1
 
@@ -39,8 +45,7 @@ Each annotations are located under the provided dataset directory with our code.
     - CASIA-SURF (S) [(SURF)](https://sites.google.com/view/face-anti-spoofing-challenge/dataset-download/casia-surfcvpr2019?authuser=0).
 
 
-Dataset
------------------------
+## 🗂️ Dataset Directory Structure
 ```
 MVP-FAS
 └──────dataset
@@ -95,133 +100,139 @@ MVP-FAS
               └──────surf_real_train.txt
        
 ```
------------------------
-#Requirements
-Create conda environment ```conda create -n MVP_FAS python=3.8```
+---
 
-Install pytorch 2.1.2 ```conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia```
+## ⚙️ Requirements
 
-Other libraries are described in the ```./requirements.txt``` file.
-
-And it can be downloaded with the following command ```pip install -r ./requirements.txt```
-
------------------------
-# Training
-Protocol 1
------------------------
-Edit ```./config/cfg.py```
+### 1️⃣ Create Conda Environment
+```bash
+conda create -n MVP_FAS python=3.8
 ```
+### 2️⃣ Install PyTorch
+```bash
+conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+```
+
+### 3️⃣ Install Other Dependencies
+```bash
+pip install -r ./requirements.txt
+```
+
+## 🚀 Training
+
+### 🧩 Protocol 1
+
+Edit configuration file ```./config/cfg.py```:
+```python
 _C.TRAIN.LR = 1e-6
 _C.TRAIN.EPOCH = 30
 ```
 
-OCI -> M
+#### OCI → M
 
 Run ```./train.py```
 ```
 python train.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting MCIO --train_dataset CIO --test_dataset M 
 ```
-OMI -> C
+#### OMI → C
 
 Run ```./train.py```
 ```
 python train.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting MCIO --train_dataset MIO --test_dataset C 
 ```
-OCM -> I
+#### OCM → I
 
 Run ```./train.py```
 ```
 python train.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting MCIO --train_dataset MCO --test_dataset I 
 ```
-ICM -> O
+#### ICM → O
 
 Run ```./train.py```
 ```
 python train.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting MCIO --train_dataset MCI --test_dataset O 
 ```
+---
 
-Protocol 2
------------------------
-Edit ```./config/cfg.py```
-```
+### 🧩 Protocol 2
+
+
+Edit configuration file ```./config/cfg.py```
+```python
 _C.TRAIN.LR = 1e-7
 _C.TRAIN.EPOCH = 300
 ```
 
-CS -> W
+#### CS → W
 
 Run ```./train.py```
 ```
 python train.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting SFW --train_dataset SF --test_dataset W 
 ```
-SW -> C
+#### SW → C
 
 Run ```./train.py```
 ```
 python train.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting SFW --train_dataset SW --test_dataset F 
 ```
-CW -> S
+#### CW → S
 
 Run ```./train.py```
 ```
 python train.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting SFW --train_dataset FW --test_dataset S 
 ```
 -----------------------
-For more details on training, see ```./reference/log```
 
-# Testing
-Protocol 1
------------------------
+
+## 🧪 Testing
+
+### 🧩 Protocol 1
 Place the model you want to test under the ```./reference``` folder.
 
-
-OCI -> M
+#### OCI → M
 
 Run ```./test.py```
 ```
 python test.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting MCIO --train_dataset CIO --test_dataset M --checkpoint best_model.pth
 ```
-OMI -> C
+#### OMI → C
 
 Run ```./test.py```
 ```
 python test.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting MCIO --train_dataset MIO --test_dataset C --checkpoint best_model.pth 
 ```
-OCM -> I
+#### OCM → I
 
 Run ```./test.py```
 ```
 python test.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting MCIO --train_dataset MCO --test_dataset I --checkpoint best_model.pth 
 ```
-ICM -> O
+#### ICM → O
 
 Run ```./test.py```
 ```
 python test.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting MCIO --train_dataset MCI --test_dataset O --checkpoint best_model.pth 
 ```
+---
 
-Protocol 2
------------------------
+### 🧩 Protocol 2
 Place the model you want to test under the ```./reference``` folder.
 
-CS -> W
+#### CS → W
 
 Run ```./test.py```
 ```
 python test.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting SFW --train_dataset SF --test_dataset W --checkpoint best_model.pth 
 ```
-SW -> C
+#### SW → C
 
 Run ```./test.py```
 ```
 python test.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting SFW --train_dataset SW --test_dataset F --checkpoint best_model.pth 
 ```
-CW -> S
+#### CW → S
 
 Run ```./test.py```
 ```
 python test.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting SFW --train_dataset FW --test_dataset S --checkpoint best_model.pth 
 ```
-
-
-
