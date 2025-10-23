@@ -1,8 +1,8 @@
 # [ICCV 2025] Multi-View Slot Attention using Paraphrased Texts for Face Anti-Spoofing
 
 
-## 🏆 ICCV 2025 Main Track — Poster  
-## 🎤 ICCV 2025 Workshop on Foundation and Generative Models in Biometrics — Oral
+### 🏆 ICCV 2025 Main Track — Poster  
+### 🎤 ICCV 2025 Workshop on Foundation and Generative Models in Biometrics — Invited Talk (Oral)
 
 ---
 
