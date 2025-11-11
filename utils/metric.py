@@ -2,7 +2,11 @@ import math
 import numpy as np
 import torch
 
-from scipy.integrate import simps
+try:
+    from scipy.integrate import simps
+except:
+    from scipy.integrate import simpson as simps
+    
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import roc_curve
 
