@@ -106,7 +106,7 @@ MVP-FAS
 
 ### 1️⃣ Create Conda Environment
 ```bash
-conda create -n MVP_FAS python=3.8
+conda create -n MVP_FAS python=3.11
 ```
 ### 2️⃣ Install PyTorch
 ```bash
