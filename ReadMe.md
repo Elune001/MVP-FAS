@@ -5,6 +5,12 @@
 ### 🎤 ICCV 2025 Workshop on Foundation and Generative Models in Biometrics — Invited Talk (Oral)
 
 ---
+## 🚀 TODO List
+### ✅ Code release 
+### ✅ Checkpoint release for Protocol 1 & 2 
+### 🔄 Refine visualization code
+
+---
 
 ## 🧠 MVP-FAS Overview
 
@@ -183,6 +189,8 @@ python train.py --model MVP_FAS --save_name MVP_FAS --batch_size 18 --setting SF
 ```
 -----------------------
 
+## 💾 Checkpoints
+### We also provide checkpoints of [Protocol 1](https://drive.google.com/drive/folders/1nfDyRUKn9OBQJXijkTTzLsI1AZs8k5C6?usp=drive_link) and [Protocol 2](https://drive.google.com/drive/folders/15Sa3P-AaHGmedEtyEs9Tv-aVQsxnQ2dK?usp=drive_link).
 
 ## 🧪 Testing
 
